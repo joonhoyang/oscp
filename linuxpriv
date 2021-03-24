@@ -40,3 +40,4 @@ Back on the Debian VM, as the low privileged user account, execute the file to g
 SMB:
 https://0xdf.gitlab.io/2018/12/02/pwk-notes-smb-enumeration-checklist-update1.html
 echo exit | smbclient -L \\\\[ip]
+nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount 10.10.132.104
