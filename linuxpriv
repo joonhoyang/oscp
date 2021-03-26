@@ -1,4 +1,4 @@
-SUID / SGID Executables - Abusing Shell Features (#2)
+#SUID / SGID Executables - Abusing Shell Features (#2)
 Note: This will not work on Bash versions 4.4 and above.
 
 When in debugging mode, Bash uses the environment variable PS4 to display an extra prompt for debugging statements.
