@@ -1,4 +1,7 @@
-smbmap -H "10.10.185.43" | tee "recon/smbmap_10.10.185.43.txt"      
+smbmap -H "10.10.185.43" | tee "recon/smbmap_10.10.185.43.txt"    
+smbmap -H "10.10.185.43" -u milesdyson -p ')s{A&2Z=F^n_E.B`'
+smbclient --user=milesdyson //10.10.185.43/milesdyson 
+
 smbclient -L "//10.10.185.43/" -U "guest"%| tee "recon/smbclient_10.10.185.43.txt"              
 
 smbclient -L x.x.x.x
