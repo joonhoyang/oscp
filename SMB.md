@@ -5,7 +5,8 @@ https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.
   smbmap -H "10.10.185.43" -u milesdyson -p ')s{A&2Z=F^n_E.B`'
   
   
-smbclient
+#### smbclient
+
   smbclient --user=milesdyson //10.10.185.43/milesdyson 
 
   smbclient -L "//10.10.185.43/" -U "guest"%| tee "recon/smbclient_10.10.185.43.txt"              
