@@ -1,4 +1,6 @@
-smbmap
+https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.md
+#### smbmap
+
   smbmap -H "10.10.185.43" | tee "recon/smbmap_10.10.185.43.txt"    
   smbmap -H "10.10.185.43" -u milesdyson -p ')s{A&2Z=F^n_E.B`'
   
