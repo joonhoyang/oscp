@@ -1,8 +1,8 @@
 php reverse.shell
 
-#rlwrap nc -lvnp <port>
+*rlwrap nc -lvnp <port>
 
-“no tty present and no askpass program specified.” 
+>“no tty present and no askpass program specified.” 
 #python3 -c 'import pty; pty.spawn("/bin/sh")'
 #python -c 'import pty;pty.spawn("/bin/bash")', 
 #export TERM=xterm
