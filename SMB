@@ -1,0 +1,3 @@
+smbmap -H "10.10.185.43" | tee "recon/smbmap_10.10.185.43.txt"      
+smbclient -L "//10.10.185.43/" -U "guest"%| tee "recon/smbclient_10.10.185.43.txt"              
+
