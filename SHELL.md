@@ -3,7 +3,7 @@ php reverse.shell
 #### no tty present and no askpass program specified.
 ````
 python3 -c 'import pty; pty.spawn("/bin/sh")'
-python -c 'import pty;pty.spawn("/bin/bash")', 
+python -c 'import pty;pty.spawn("/bin/bash")'
 export TERM=xterm
 stty raw -echo; fg
 `````
