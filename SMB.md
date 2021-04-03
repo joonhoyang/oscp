@@ -5,7 +5,7 @@ https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.
   smbmap -H "10.10.185.43" -u milesdyson -p ')s{A&2Z=F^n_E.B`'
   smbmap -u null -p "" -H 10.10.83.190  -P 445 -R 
   
-  smbclient \\\\10.10.104.121\\nt4wrksv
+  `smbclient \\\\10.10.104.121\\nt4wrksv`
   .smb: \> put pwn.exe                                                                                                                                       │        dr--r--r--   
 #### smbclient
 
