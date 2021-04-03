@@ -16,6 +16,7 @@ https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.
   smbclient -L x.x.x.x
   smbmount //x.x.x.x/share /mnt –o username=hodor,workgroup=hodor
   smbclient \\\\x.x.x.x\\share
+  
   enum4linux -a ip
   rpcclient -U "" x.x.x.x  #Anonymous bind using rpcclient / Null connect
   smbclient //MOUNT/share #Connect to SMB share
@@ -32,9 +33,13 @@ https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.
 
 mount
   mount ip:/vol/share /mnt/nfs  -nolock
+  
   mount -t cifs -o username=user,password=pass,domain=blah //ip.X/share-name /mnt/cifs
+  
   mount -t cifs //x.x.x.x/share /mnt
+  
   mount -t cifs -o username=hodor,password=hodor //x.x.x.x/share /mnt
+  
 #### Mounting File Share
   showmount -e IPADDR
   sudo mount -t fuse.vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other
@@ -54,10 +59,9 @@ mount
 
 nmap --script=smb-enum-shares.nse,smb-ls.nse,smb-enum-users.nse,smb-mbenum.nse,smb-os-discovery.nse,smb-security-mode.nse,smbv2-enabled.nse,smb-vuln-cve2009-3103.nse,smb-vuln-ms06-025.nse,smb-vuln-ms07-029.nse,smb-vuln-ms08-067.nse,smb-vuln-ms10-054.nse,smb-vuln-ms10-061.nse,smb-vuln-regsvc-dos.nse,smbv2-enabled.nse INSERTIPADDRESS -p 445
 	
-	enum4linux -a INSERTIPADDRESS
-	rpcclient -U "" INSERTIPADDRESS
-		-c options
-		    srvinfo
+enum4linux -a INSERTIPADDRESS
+rpcclient -U "" INSERTIPADDRESS		-c options
+srvinfo
     enumdomusers
     getdompwinfo
     querydominfo
