@@ -17,7 +17,7 @@ https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.
   
   smbmount //x.x.x.x/share /mnt –o username=hodor,workgroup=hodor
   
-  smbclient \\\\x.x.x.x\\share
+  smbclient \\\\\\x.x.x.x\\\share
   
   enum4linux -a ip
   
