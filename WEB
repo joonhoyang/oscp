@@ -1,0 +1,1 @@
+gobuster -u http://10.10.180.150:49663/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -│ seconde -k -l -s "200,204,301,302,307,401,403" -x "txt,html,php,asp,aspx,jsp" -o "/home/kali/tools/enumeration/autorecon/results/10.10.180.150/scans/tcp_49663_h
