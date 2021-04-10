@@ -8,6 +8,7 @@ https://tryhackme.com/room/introtoshells
 # Reverse Shell Cheat Sheet
 
 ## Summary
+* [Spawn TTY Shell](#spawn-tty-shell)
 
 * [Reverse Shell](#reverse-shell)
     * [Awk](#awk)
@@ -42,7 +43,6 @@ https://tryhackme.com/room/introtoshells
     * [Linux Staged reverse TCP](#linux-staged-reverse-tcp)
     * [Linux Stageless reverse TCP](#linux-stageless-reverse-tcp)
     * [Other platforms](#other-platforms)
-* [Spawn TTY Shell](#spawn-tty-shell)
 * [Linux shell multiline write](#Linux-shell-multiline-write)
 * [References](#references)
 
