@@ -56,6 +56,7 @@ $ touch /var/www/html/--checkpoint-action=exec=bash\ shell
     * [Linux Stageless reverse TCP](#linux-stageless-reverse-tcp)
     * [Other platforms](#other-platforms)
 * [Spawn TTY Shell](#spawn-tty-shell)
+* [Linux shell multiline write]
 * [References](#references)
 
 ## Reverse Shell
@@ -538,3 +539,13 @@ Offline version of the ps1 available at --> https://github.com/antonioCoco/ConPt
 * [Pentest Monkey - Cheat Sheet Reverse shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 * [Spawning a TTY Shell](http://netsec.ws/?p=337)
 * [Obtaining a fully interactive shell](https://forum.hackthebox.eu/discussion/142/obtaining-a-fully-interactive-shell)
+
+## Linux shell multiline write
+```
+* cat << EOF
+usage: up [--level <n>| -n <levels>][--help][--version]
+
+Report bugs to: 
+up home page:
+EOF
+````
