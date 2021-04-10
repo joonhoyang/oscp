@@ -1,4 +1,4 @@
-php reverse.shell
+
 https://tryhackme.com/room/introtoshells
 #### rlwrap nc -lvnp <port>
 #### no tty present and no askpass program specified.
