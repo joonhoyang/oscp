@@ -5,3 +5,7 @@ https://unicornsec.com/home/tryhackme-crack-the-hash
 hashcat -m 1800 '$6$GQXVvW4EuM$ehD6jWiMsfNorxy5SINsgdlxmAEl3.yif0/c3NqzGLa0P.S7KRDYjycw5bnYkF5ZtB8wQy8KnskuWQS3Yr1wQ0' /usr/share/wordlists/rockyou.txt  
 
 hashcat hash /usr/share/wordlists/rockyou.txt -m 0 --force
+
+/home/kali/tools/cracker/john/run/ssh2john.py id_rsa > id_rsa.hash
+
+john id_rsa.hash --wordlist=/usr/share/wordlists/rockyou.txt
