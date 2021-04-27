@@ -12,7 +12,7 @@ https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.
   smbclient --user=milesdyson //10.10.185.43/milesdyson 
 
   smbclient -L "//10.10.185.43/" -U "guest"%| tee "recon/smbclient_10.10.185.43.txt"              
-
+smbclient -N //10.10.10.3/tmp --option='client min protocol=NT1'
   smbclient -L x.x.x.x
   
   smbmount //x.x.x.x/share /mnt –o username=hodor,workgroup=hodor
