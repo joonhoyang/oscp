@@ -2,3 +2,4 @@ gobuster -u http://10.10.180.150:49663/ -w /usr/share/seclists/Discovery/Web-Con
 gobuster dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -t 30  -u "http://10.10.217.69:49663" 
 feroxbuster -u http://10.10.151.178 --wordlist /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 
+wpscan --url https://brainfuck.htb --disable-tls-checks --enumerate p --enumerate t --enumerate u 
