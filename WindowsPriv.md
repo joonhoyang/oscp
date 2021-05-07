@@ -26,4 +26,7 @@ PentestMonkey Windows-privesc-check is standalone executable that runs on Window
 Exploit Suggester For this one, we need to grab the output of systeminfo and then run it against the script. -- Update the database: ./windows-exploit-suggester.py --update
 ./windows-exploit-suggester.py --database 2018-10-28-mssb.xlsx --systeminfo winsysinfo.txt
 OR
--- If we only know about the Operating System name and not much about the hot-fixes, then possible exploits for an operating system can be used without hotfix data ./windows-exploit-suggester.py --database 2018-10-28-mssb.xlsx --ostext 'windows server 2008 r2'
+-- If we only know about the Operating System name and not much about the hot-fixes, then possible exploits for an operating system can be used without hotfix data
+```
+./windows-exploit-suggester.py --database 2018-10-28-mssb.xlsx --ostext 'windows server 2008 r2'
+```
