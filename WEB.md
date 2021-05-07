@@ -13,3 +13,34 @@ wpscan --url https://brainfuck.htb --disable-tls-checks --enumerate p --enumerat
 ```
 https://vk9-sec.com/drupal-7-x-module-services-remote-code-execution/
 ```
+
+Web Scanning:
+#Web Scanning with extensions
+
+Linux (Example web server might be Apache) gobuster dir -e -u http://10.10.10.10/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,html,js,txt,jsp,pl -s 200,204,301,302,307,403,401
+
+Windows (Example web server might be IIS)
+
+gobuster dir -e -u http://10.10.10.10/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,html,js,txt,asp,aspx,jsp,bak -s 200,204,301,302,307,403,401
+
+Linux (Example web server might be Apache)
+
+python3 dirsearch.py -r -u http://10.10.10.131/ -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -e php,html,js,txt,jsp,pl -t 50
+
+Windows (Example web server might be IIS)
+
+python3 dirsearch.py -r -u http://10.10.10.131/ -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -e php,html,js,txt,asp,aspx,jsp,bak -t 50
+
+#HTTP gobuster dir -u http://10.10.10.10 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -x php,html,txt -t 69
+
+#HTTPS gobuster dir -k -u https://10.10.10.10/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 69 (in some cases --wildcard will need to be used instead of -k)
+
+#Nikto nikto -h 10.10.10.10 -p 80
+
+#Nikto HTTPS ``nikto -h 10.10.10.10 -p 443```
+
+WFuzz wfuzz -u http://10.10.10.10/hello.php?dir=../../../../../../../../../FUZZ%00 -w /usr/share/wfuzz/wordlist/general/common.txt
+
+Web Shells
+https://github.com/Arrexel/phpbash
+https://github.com/flozz/p0wny-shell
