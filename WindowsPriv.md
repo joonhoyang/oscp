@@ -35,3 +35,6 @@ OR
 ```
 ./windows-exploit-suggester.py --database 2018-10-28-mssb.xlsx --ostext 'windows server 2008 r2'
 ```
+```
+https://guide.offsecnewbie.com/privilege-escalation/windows-pe
+```
