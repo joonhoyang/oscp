@@ -36,5 +36,7 @@ OR
 ./windows-exploit-suggester.py --database 2018-10-28-mssb.xlsx --ostext 'windows server 2008 r2'
 ```
 ```
+wmic qfe get Caption,Description,HotFixID,InstalledOn
+
 https://guide.offsecnewbie.com/privilege-escalation/windows-pe
 ```
