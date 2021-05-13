@@ -1,3 +1,6 @@
+###
+https://www.hackingarticles.in/linux-privilege-escalation-automated-script/
+
 ### SUID / SGID Executables - Abusing Shell Features (#2)
 Note: This will not work on Bash versions 4.4 and above.
 
