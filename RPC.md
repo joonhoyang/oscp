@@ -21,7 +21,10 @@ smbclient -N //10.10.10.3/tmp --option='client min protocol=NT1'
   
   enum4linux -a ip
   
-  rpcclient -U "" x.x.x.x  #Anonymous bind using rpcclient / Null connect
+  
+  
+  
+  client -U "" -N x.x.x.x  #Anonymous bind using rpcclient / Null connect
   
   smbclient //MOUNT/share #Connect to SMB share
 
@@ -68,7 +71,7 @@ mount
 nmap --script=smb-enum-shares.nse,smb-ls.nse,smb-enum-users.nse,smb-mbenum.nse,smb-os-discovery.nse,smb-security-mode.nse,smbv2-enabled.nse,smb-vuln-cve2009-3103.nse,smb-vuln-ms06-025.nse,smb-vuln-ms07-029.nse,smb-vuln-ms08-067.nse,smb-vuln-ms10-054.nse,smb-vuln-ms10-061.nse,smb-vuln-regsvc-dos.nse,smbv2-enabled.nse INSERTIPADDRESS -p 445
 ```	
 enum4linux -a INSERTIPADDRESS
-rpcclient -U "" INSERTIPADDRESS		-c options
+rpcclient -U "" -N INSERTIPADDRESS		-c options
 srvinfo
     enumdomusers
     getdompwinfo
