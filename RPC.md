@@ -83,10 +83,11 @@ srvinfo
     smbclient \\\\INSERTIPADDRESS\\ipc$ -U john
     smbclient //INSERTIPADDRESS/ipc$ -U john 
 	nmblookup -A INSERTIPADDRESS
-#Admin Ccount
+#Admin acount
 rpcclient $> enumdomgroups
 
 rpcclient $> querygroup 0x200          
 rpcclient $> querygroupmem 0x200
 rpcclient $> queryuser 0x1f4            
+```  
 ```
