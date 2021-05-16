@@ -1,8 +1,10 @@
 https://github.com/frizb/Windows-Privilege-Escalation
+AMSI PATCH
 https://recipeforroot.com/advanced-powerup-ps1-usage/
 
 ###powershell with Priv checker
 ```
+powershell -ep bypass
 PS C:\> Import-Module PowerUp.ps1
 
 PS C:\> . .\PowerUp.ps1
