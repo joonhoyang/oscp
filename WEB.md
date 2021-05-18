@@ -1,3 +1,9 @@
+
+### wordprocess - need to see plugins
+```
+wpscan --url http://10.10.10.88/webservices/wp -e ap --plugins-detection aggressive
+
+```
 ## Please the scan for sub directory if seen dir
 
 ```
