@@ -20,6 +20,12 @@ netshareenum
 netshareenumall
 smbclient -L INSERTIPADDRESS
 smbclient //INSERTIPADDRESS/tmp
+mask ""
+recurse ON
+prompt OFF
+mget *
+
+
 smbclient \\\\INSERTIPADDRESS\\ipc$ -U john
 smbclient //INSERTIPADDRESS/ipc$ -U john 
 nmblookup -A INSERTIPADDRESS
