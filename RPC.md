@@ -25,6 +25,7 @@ smbclient //INSERTIPADDRESS/ipc$ -U john
 nmblookup -A INSERTIPADDRESS
 ```
 
+![image](https://user-images.githubusercontent.com/9059079/118906570-0031fa00-b8ec-11eb-83e5-47f90fca76ca.png)
 
 
 
