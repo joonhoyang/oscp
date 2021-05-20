@@ -1,5 +1,33 @@
 https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.md
 #### smbmap
+• Name:
+• Version:
+• Domain/workgroup name:
+• Domain-sid:
+• Allows unauthenticated login:
+
+
+nmap --script=smb-enum-shares.nse,smb-ls.nse,smb-enum-users.nse,smb-mbenum.nse,smb-os-discovery.nse,smb-security-mode.nse,smbv2-enabled.nse,smb-vuln-cve2009-3103.nse,smb-vuln-ms06-025.nse,smb-vuln-ms07-029.nse,smb-vuln-ms08-067.nse,smb-vuln-ms10-054.nse,smb-vuln-ms10-061.nse,smb-vuln-regsvc-dos.nse,smbv2-enabled.nse INSERTIPADDRESS -p 445
+
+enum4linux -a INSERTIPADDRESS
+rpcclient -U "" INSERTIPADDRESS
+	-c options
+	    srvinfo
+enumdomusers
+getdompwinfo
+querydominfo
+netshareenum
+netshareenumall
+smbclient -L INSERTIPADDRESS
+smbclient //INSERTIPADDRESS/tmp
+smbclient \\\\INSERTIPADDRESS\\ipc$ -U john
+smbclient //INSERTIPADDRESS/ipc$ -U john 
+nmblookup -A INSERTIPADDRESS
+
+
+
+
+
 
   smbmap -H "10.10.185.43" | tee "recon/smbmap_10.10.185.43.txt"    
   smbmap -H "10.10.185.43" -u milesdyson -p ')s{A&2Z=F^n_E.B`'
@@ -8,6 +36,7 @@ https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.
   `smbclient \\\\10.10.104.121\\nt4wrksv`
   .smb: \> put pwn.exe                                                                                                                                       │        dr--r--r--   
 #### smbclient
+  smbclient -L 10.10.10.134
 
   smbclient --user=milesdyson //10.10.185.43/milesdyson 
 
