@@ -34,6 +34,7 @@ smbmap -u null -p "" -H 10.10.10.134 -P 445 -R
 
 ![image](https://user-images.githubusercontent.com/9059079/118906570-0031fa00-b8ec-11eb-83e5-47f90fca76ca.png)
 
+![image](https://user-images.githubusercontent.com/9059079/119067201-88c59e80-b9af-11eb-9f1a-54bc5618d4ee.png)
 
 
 
