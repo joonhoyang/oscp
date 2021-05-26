@@ -43,7 +43,10 @@ smbmap -u null -p "" -H 10.10.10.134 -P 445 -R
   smbmap -u null -p "" -H 10.10.83.190  -P 445 -R 
   
   `smbclient \\\\10.10.104.121\\nt4wrksv`
-  .smb: \> put pwn.exe                                                                                                                                       │        dr--r--r--   
+  .smb: \> put pwn.exe                                                                                                                                       │        dr--r--r--   ```
+  ![image](https://user-images.githubusercontent.com/9059079/119594287-7da4b100-bda9-11eb-831c-aa0ef569ccb8.png)
+
+  ```
 #### smbclient
   smbclient -L 10.10.10.134
 
