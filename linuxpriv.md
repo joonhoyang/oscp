@@ -1,7 +1,7 @@
 ###
 ```
 sudo earlier than 1.8.26
-Check *** pwfeedback
+Check *** pwfeedback https://github.com/saleemrashid/sudo-cve-2019-18634
 
 sudo -l
 
