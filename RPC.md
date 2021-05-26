@@ -31,6 +31,7 @@ smbclient //INSERTIPADDRESS/ipc$ -U john
 nmblookup -A INSERTIPADDRESS
 smbmap -u null -p "" -H 10.10.10.134 -P 445 -R             
 ```
+https://fareedfauzi.gitbook.io/oscp-notes/services-enumeration/smb
 
 ![image](https://user-images.githubusercontent.com/9059079/118906570-0031fa00-b8ec-11eb-83e5-47f90fca76ca.png)
 
