@@ -1,5 +1,20 @@
 ###
 ```
+sudo earlier than 1.8.26
+Check *** pwfeedback
+
+sudo -l
+
+history
+
+find .
+
+cat /etc/os-release
+uname -a
+
+
+```
+```
 https://www.hackingarticles.in/linux-privilege-escalation-automated-script/
 https://github.com/belane/linux-soft-exploit-suggester
 ```
