@@ -40,3 +40,9 @@ hashcat -m 7400 hash.txt /usr/share/wordlists/rockyou.txt --force
 john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt 
 
 ```
+### Kerberos - 13100
+```
+root@kali:~# hashcat -a 0 -m 13100 tgs-administrator.hash /usr/share/wordlists/rockyou.txt –force
+root@kali:~# hashcat -m 13100 tgs-administrator.hash –show
+$krb5tgs$23$*Administrator$ACTIVE.HTB$active/CIFS~445*...[hash-value]...:Ticketmaster1968
+```
