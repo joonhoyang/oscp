@@ -46,6 +46,10 @@ https://fareedfauzi.gitbook.io/oscp-notes/services-enumeration/smb
   `smbclient \\\\10.10.104.121\\nt4wrksv`
   .smb: \> put pwn.exe                                                                                                                                       │        dr--r--r--   ```
   ![image](https://user-images.githubusercontent.com/9059079/119594287-7da4b100-bda9-11eb-831c-aa0ef569ccb8.png)
+```
+
+```
+![image](https://user-images.githubusercontent.com/9059079/119918467-870f5400-bf36-11eb-819b-870c0efd2487.png)
 
   ```
 #### smbclient
