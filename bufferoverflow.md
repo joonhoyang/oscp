@@ -1,3 +1,7 @@
+'''
+xfreerdp /u:admin /p:password /cert:ignore /v:10.10.83.194 /workarea  
+'''
+
 ```
 !mona config -set workingfolder c:\mona\%p
 /opt/metasploit-framework/embedded/framework/tools/exploit/pattern_create.rb -l 1500
