@@ -1,6 +1,7 @@
 ### Linux
 ```
 find . -type f -print0 -exec  strings {} \; > output
+find . -type f -not -name "*.js"  -print0 -exec  strings {} \; > /tmp/output
 ```
 
 ```
