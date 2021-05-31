@@ -1,3 +1,7 @@
+### Linux
+```
+find . -type f -print0 -exec  strings {} \; > output
+```
 
 ```
 hashcat -m 18200 user3 ../../wordlist/Active-Directory-Wordlists/Pass.txt
