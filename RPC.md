@@ -1,4 +1,13 @@
 https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.md
+### nfs
+```
+nfs-ls #List NFS exports and check permissions
+nfs-showmount #Like showmount -e
+nfs-statfs #Disk statistics and info from NFS share
+mount -t nfs [-o vers=2] 10.12.0.150:/backup /mnt/new_back -o nolock
+
+```
+
 #### smbmap
 • Name:
 • Version:
