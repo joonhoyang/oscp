@@ -1,3 +1,9 @@
+### Don't forget to make command with extension 
+```
+PS C:\users\public\downloads> . 
+.\PowerUp.ps1PS C:\users\public\downloads> Invoke-AllChecks
+```
+
 ###Service
 ```
 https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#services
