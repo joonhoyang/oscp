@@ -1,6 +1,7 @@
 ###Service
 ```
 https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#services
+./accesschk.exe -ucqv -accepteula UsoSvc 
 ```
 
 
