@@ -2,6 +2,7 @@
 ```
 https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#services
 ./accesschk.exe -ucqv -accepteula UsoSvc 
+Get-WmiObject win32_service | Format-Table -Wrap -AutoSize -Property State,Name,PathName 
 ```
 
 
