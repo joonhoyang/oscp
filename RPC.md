@@ -3,6 +3,7 @@ https://github.com/absolomb/Pentesting/blob/master/guides/Initial%20Enumeration.
 ```
 nfs-ls #List NFS exports and check permissions
 nfs-showmount #Like showmount -e
+showmount -e 10.10.10.180
 nfs-statfs #Disk statistics and info from NFS share
 mount -t nfs [-o vers=2] 10.12.0.150:/backup /mnt/new_back -o nolock
 
