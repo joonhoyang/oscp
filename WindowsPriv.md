@@ -1,3 +1,7 @@
+
+
+https://github.com/gtworek/Priv2Admin
+
 https://github.com/frizb/Windows-Privilege-Escalation
 AMSI PATCH
 https://recipeforroot.com/advanced-powerup-ps1-usage/
