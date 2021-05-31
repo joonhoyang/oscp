@@ -1,5 +1,9 @@
 ### Don't forget to make command with extension 
+
 ```
+PowerUp.ps1
+winPEAS.exe
+
 PS C:\users\public\downloads> . 
 .\PowerUp.ps1PS C:\users\public\downloads> Invoke-AllChecks
 ```
