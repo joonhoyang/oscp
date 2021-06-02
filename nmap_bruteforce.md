@@ -11,3 +11,8 @@ sudo masscan -p1-65535,U:1-65535 10.10.10.161 --rate=1000 -e tun0
  ```
 
 https://www.stationx.net/nmap-cheat-sheet/
+### Vuln
+```
+nmap --script vuln -oA vuln-scan 10.10.10.79
+
+```
