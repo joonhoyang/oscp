@@ -176,14 +176,10 @@ ls -l /etc/passwd
 openssl passwd newpasswordhere
 root:Z.5x9gGZx7J7U:0:0:root:/root:/bin/bash
 
-
-
-
-
-
-
-
  
 ```
+###LD_PRELOAD
+![image](https://user-images.githubusercontent.com/9059079/120900722-687b1e00-c604-11eb-9020-8b1b9e5b59c1.png)
+
 
 
