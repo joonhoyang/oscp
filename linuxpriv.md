@@ -234,3 +234,13 @@ mount -o rw,vers=2 10.10.10.10:/tmp /tmp/nfs
 
 ```
 ![image](https://user-images.githubusercontent.com/9059079/120907301-52825300-c62e-11eb-8807-4cdb22c86d89.png)
+
+### capability
+```
+1. In command prompt type: getcap -r / 2>/dev/null
+2. From the output, notice the value of the “cap_setuid” capability.
+1. In command prompt type: getcap -r / 2>/dev/null
+2. From the output, notice the value of the “cap_setuid” capability.
+
+```
+https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/
