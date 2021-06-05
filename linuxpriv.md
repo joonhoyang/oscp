@@ -1,5 +1,7 @@
 ### 
 https://tryhackme.com/room/linuxprivesc
+
+
 ###sudo -l
 ```
 Linux VM
