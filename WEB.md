@@ -1,4 +1,7 @@
-
+### nikto 
+```
+-id admin:PrettyAwesomePassword1234
+```
 ### wordprocess - need to see plugins
 ```
 wpscan --url http://10.10.10.88/webservices/wp -e ap --plugins-detection aggressive
