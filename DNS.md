@@ -13,4 +13,7 @@ dig axfr friendzon.red @10.10.10.123
 ```
 dnsrecon -t brt -d acmeitsupport.thm
 ./sublist3r.py -d acmeitsupport.thm
+user@machine$ ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://MACHINE_IP
+user@machine$ ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://MACHINE_IP -fs {size}
+
 ```
