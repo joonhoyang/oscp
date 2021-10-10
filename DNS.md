@@ -12,4 +12,5 @@ dig axfr friendzon.red @10.10.10.123
 
 ```
 dnsrecon -t brt -d acmeitsupport.thm
+./sublist3r.py -d acmeitsupport.thm
 ```
