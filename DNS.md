@@ -7,6 +7,10 @@ server 10.10.10.13
 10.10.10.13
 
 dig axfr friendzon.red @10.10.10.123
+dig @10.10.10.161 htb.local dig @10.10.10.161 forest.htb.local
+
+But it doesn’t let me do a zone transfer:
+dig axfr @10.10.10.161 htb.local
 ```
 ![image](https://user-images.githubusercontent.com/9059079/119153392-34f29e00-ba1f-11eb-9ee0-c47f113c8c72.png)
 
