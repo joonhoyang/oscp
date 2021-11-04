@@ -5,7 +5,9 @@ sudo nmap --script vuln -oA vuln-scan 10.10.10.79
 sudo nmapAutomater
 sudo autorecon
 https://www.stationx.net/nmap-cheat-sheet/
-
+```
+```
+root@kali:~# wfuzz -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt --hw 15 http://10.10.66.89:8081/FUZZ
 
 ```
 ```
