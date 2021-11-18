@@ -77,7 +77,7 @@ smbclient -N //10.10.10.3/tmp --option='client min protocol=NT1'
   smbmount //x.x.x.x/share /mnt –o username=hodor,workgroup=hodor
   
   smbclient //10.10.100.49/anonymous
-  
+  smbclient //10.10.10.40/Users -U anonymous --no-pass
   enum4linux -a ip
   
   
