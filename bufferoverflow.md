@@ -1,4 +1,7 @@
 ```
+https://medium.com/swlh/tryhackme-buffer-overflow-prep-9b2ece17a13c
+```
+```
 xfreerdp /u:admin /p:lab /cert:ignore /v:192.168.29.111 /workarea  
 rdesktop -a 16 -z -u admin -p lab 192.168.29.111
 ```
