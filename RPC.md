@@ -49,6 +49,8 @@ https://hackmag.com/security/htb-kerberos/
 
 ![image](https://user-images.githubusercontent.com/9059079/119919265-136e4680-bf38-11eb-8357-d3ecbaf7b539.png)
 
+smbmap -H 10.129.135.61 -P 445 -u null -p "" -R
+
 
   smbmap -H "10.10.185.43" | tee "recon/smbmap_10.10.185.43.txt"    
   smbmap -H "10.10.185.43" -u milesdyson -p ')s{A&2Z=F^n_E.B`'
