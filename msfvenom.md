@@ -1,3 +1,4 @@
+https://medium.com/@hannahsuarez/full-list-of-546-msfvenom-payloads-39adb4d793c9
 https://github.com/tagnullde/OSCP/blob/master/oscp-cheatsheet.md
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#bash-tcp
 
