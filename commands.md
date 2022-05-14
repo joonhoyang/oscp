@@ -65,3 +65,7 @@ $credential = New-Object System.Management.Automation.PSCredential "sniper\chris
 Invoke-Command -ComputerName sniper -Credential $credential -ScriptBlock {whoami}
 
 ```
+
+```
+tree /f /a
+```
