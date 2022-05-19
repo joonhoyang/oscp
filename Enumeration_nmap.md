@@ -1,5 +1,8 @@
 ###
 ```
+sudo masscan -p1-65535,U:1-65535 192.168.133.110 --rate=1000 -e tun0   
+```
+```
 sudo nmap -sV -sC -oA ip 
 sudo nmap --script vuln -oA vuln-scan 10.10.10.79
 nmap -nv -Pn -T4 -p445 -oA nmap-vuln-445 --script=vuln 10.10.10.40
